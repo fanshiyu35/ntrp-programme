@@ -1,0 +1,125 @@
+/* NTRP — National Transport Research Programme
+   Institutional style: deep blue, brass accent, serif display */
+
+:root {
+  --navy-900: #122b44;
+  --navy-800: #16334f;
+  --navy-700: #1c3d5a;
+  --navy-100: #e8eef4;
+  --brass: #b08d3f;
+  --brass-dark: #8f702c;
+  --paper: #f4f6f8;
+  --white: #ffffff;
+  --ink: #242a30;
+  --muted: #5b6672;
+  --line: #d8dee5;
+  --line-strong: #bcc6d1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 15.5px;
+}
+
+a { color: var(--navy-700); text-decoration: underline; text-decoration-color: #9db2c6; text-underline-offset: 2px; }
+a:hover { color: var(--brass-dark); text-decoration-color: var(--brass); }
+
+/* Top ribbon */
+.ribbon {
+  background: var(--navy-900);
+  color: #dbe4ee;
+  font-size: 12.5px;
+  padding: 6px 0;
+  border-bottom: 3px solid var(--brass);
+}
+.ribbon .inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.ribbon a { color: #dbe4ee; }
+
+/* Masthead */
+.masthead { background: var(--white); border-bottom: 1px solid var(--line); }
+.masthead .inner { max-width: 1080px; margin: 0 auto; padding: 22px 24px 18px; display: flex; align-items: center; gap: 20px; }
+.crest {
+  width: 54px; height: 54px; flex: none; border-radius: 50%;
+  background: var(--navy-800); border: 3px solid var(--brass);
+  display: flex; align-items: center; justify-content: center;
+  color: #f0d9a8; font-family: Georgia, serif; font-weight: bold; font-size: 19px;
+}
+.brand h1 { font-family: Georgia, "Times New Roman", serif; font-size: 23px; color: var(--navy-800); font-weight: bold; letter-spacing: .2px; }
+.brand .sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.brand .sub b { color: var(--navy-700); font-weight: 600; }
+
+/* Nav */
+.nav { background: var(--navy-800); border-bottom: 1px solid #0e2438; }
+.nav ul { max-width: 1080px; margin: 0 auto; padding: 0 16px; list-style: none; display: flex; flex-wrap: wrap; }
+.nav li a {
+  display: block; color: #e7edf4; text-decoration: none; font-size: 14px;
+  padding: 11px 14px; border-bottom: 3px solid transparent;
+}
+.nav li a:hover { background: rgba(255,255,255,.06); }
+.nav li.active a { border-bottom-color: var(--brass); color: #fff; font-weight: 600; }
+
+/* Main layout */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 28px 24px 48px; }
+.crumbs { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
+.crumbs a { color: var(--muted); }
+.crumbs .sep { margin: 0 6px; color: #9aa5b1; }
+
+h2.pagetitle {
+  font-family: Georgia, "Times New Roman", serif; font-size: 27px; color: var(--navy-800);
+  padding-bottom: 10px; margin-bottom: 20px; border-bottom: 2px solid var(--line-strong);
+}
+h3 { font-family: Georgia, "Times New Roman", serif; font-size: 19px; color: var(--navy-700); margin: 26px 0 10px; }
+h4 { font-size: 15.5px; color: var(--navy-800); margin: 18px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { margin: 10px 0 10px 22px; }
+li { margin: 5px 0; }
+
+.lede { font-size: 16.5px; color: #333c46; }
+
+/* Cards */
+.card { background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--navy-700); padding: 18px 20px; margin: 14px 0; }
+.card h3 { margin-top: 0; }
+.card .meta { font-size: 13px; color: var(--muted); }
+
+/* Data tables */
+table.data { width: 100%; border-collapse: collapse; margin: 14px 0 20px; background: var(--white); }
+table.data th, table.data td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; font-size: 14.5px; }
+table.data th { background: var(--navy-100); color: var(--navy-800); font-weight: 600; }
+table.data td.k { width: 32%; background: #f8fafc; font-weight: 600; color: #37424e; }
+
+.tag { display: inline-block; background: var(--navy-100); color: var(--navy-800); border: 1px solid #c6d4e2; border-radius: 3px; padding: 2px 9px; font-size: 12px; font-weight: 600; margin-right: 6px; }
+.tag.brass { background: #f7efdc; color: #7a5f24; border-color: #e3d3a8; }
+
+/* Two-col */
+.cols { display: flex; gap: 28px; flex-wrap: wrap; }
+.cols > .main { flex: 2 1 620px; min-width: 0; }
+.cols > .side { flex: 1 1 260px; }
+.side .box { background: var(--white); border: 1px solid var(--line); padding: 14px 16px; margin-bottom: 16px; }
+.side .box h4 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: .6px; color: var(--navy-800); }
+.side .box ul { margin: 6px 0 0 18px; font-size: 13.5px; }
+.side .box p { font-size: 13.5px; margin: 6px 0; }
+
+.download {
+  display: inline-block; margin: 14px 0; background: var(--navy-800); color: #fff;
+  text-decoration: none; padding: 11px 22px; border: 1px solid var(--navy-900);
+  font-size: 14.5px; font-weight: 600; border-radius: 3px;
+}
+.download:hover { background: var(--brass-dark); border-color: var(--brass-dark); color: #fff; }
+.download .size { font-weight: 400; opacity: .8; margin-left: 8px; font-size: 13px; }
+
+.note { background: #fbf7ec; border: 1px solid #eadfc2; border-left: 4px solid var(--brass); padding: 12px 16px; margin: 16px 0; font-size: 14px; color: #4d4327; }
+
+footer.sitefoot { background: var(--navy-900); color: #aeb9c6; font-size: 13px; margin-top: 40px; }
+footer.sitefoot .inner { max-width: 1080px; margin: 0 auto; padding: 22px 24px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+footer.sitefoot a { color: #cdd8e4; }
+footer.sitefoot .col p { margin: 3px 0; }
+
+@media (max-width: 760px) {
+  .brand h1 { font-size: 19px; }
+  .cols { flex-direction: column; }
+}
