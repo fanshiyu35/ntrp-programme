@@ -1,19 +1,936 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Page not found — National Transport Research Programme (NTRP)</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1c3d5a">
+  <title>Page not found | National Transport Research Programme (NTRP)</title>
+  <style>
+    :root {
+      --navy: #1c3d5a;
+      --navy-dark: #142e45;
+      --blue: #315d7c;
+      --blue-light: #eaf0f5;
+      --red: #c8323e;
+      --text: #283746;
+      --muted: #687887;
+      --border: #dce3e9;
+      --background: #ffffff;
+      --surface: #f5f7f9;
+      --max-width: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Institutional masthead */
+
+    .top-strip {
+      background: #f4f6f8;
+      border-bottom: 1px solid #e4e8ec;
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    .top-strip-inner {
+      min-height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .institution-name {
+      font-weight: 650;
+      letter-spacing: .15px;
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      white-space: nowrap;
+    }
+
+    .top-links a {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .top-links .separator {
+      color: #aab4bd;
+    }
+
+    /* Main government header */
+
+    .main-header {
+      position: relative;
+      background: var(--navy);
+      color: white;
+    }
+
+    .main-header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        #ffffff 48%,
+        var(--red) 48%,
+        var(--red) 51%,
+        #ffffff 51%,
+        #ffffff 100%
+      );
+      opacity: .85;
+    }
+
+    .brand-area {
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      padding-top: 19px;
+      padding-bottom: 22px;
+    }
+
+    .brand-symbol {
+      width: 66px;
+      height: 66px;
+      flex: 0 0 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      color: var(--navy);
+      border-left: 5px solid var(--red);
+      font-size: 36px;
+      font-weight: 750;
+      letter-spacing: -2px;
+    }
+
+    .brand-copy h1 {
+      margin: 0 0 3px;
+      font-size: 27px;
+      line-height: 1.3;
+      font-weight: 650;
+      letter-spacing: -.45px;
+    }
+
+    .brand-abbreviation {
+      margin: 0 0 5px;
+      color: #e8eef3;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+
+    .brand-description {
+      margin: 0;
+      color: #d5e0e8;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* Primary navigation */
+
+    .navigation {
+      background: var(--navy-dark);
+      border-bottom: 1px solid #314b61;
+    }
+
+    .navigation-inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 53px;
+    }
+
+    .navigation a {
+      display: flex;
+      align-items: center;
+      min-height: 53px;
+      padding: 0 19px;
+      color: #f2f5f8;
+      font-size: 14px;
+      font-weight: 550;
+      border-bottom: 3px solid transparent;
+      transition: background .2s, border-color .2s;
+    }
+
+    .navigation a:first-child {
+      padding-left: 0;
+      padding-right: 25px;
+    }
+
+    .navigation a:hover,
+    .navigation a.active {
+      color: white;
+      background: rgba(255,255,255,.06);
+      border-bottom-color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* Main content */
+
+    main {
+      padding-top: 42px;
+      padding-bottom: 60px;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .main-column {
+      min-width: 0;
+    }
+
+    .introduction {
+      padding: 0 0 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .introduction p {
+      margin: 0;
+      color: #354858;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .section {
+      margin-top: 36px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 19px;
+      padding-bottom: 11px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.4;
+      font-weight: 650;
+      letter-spacing: -.25px;
+    }
+
+    /* Three-column programme cards */
+
+    .programme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .programme-card {
+      position: relative;
+      min-height: 206px;
+      padding: 21px 19px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .programme-card:hover {
+      border-top-color: var(--red);
+      box-shadow: 0 4px 15px rgba(28,61,90,.08);
+    }
+
+    .card-number {
+      display: block;
+      margin-bottom: 11px;
+      color: #a8b5bf;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .programme-card h3 {
+      margin: 0 0 9px;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .programme-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    /* Flagship project */
+
+    .flagship-card {
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .flagship-header {
+      padding: 17px 22px;
+      background: var(--blue-light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .flagship-label {
+      display: inline-block;
+      margin-bottom: 6px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .flagship-header h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 19px;
+      font-weight: 650;
+      line-height: 1.45;
+    }
+
+    .flagship-body {
+      padding: 20px 22px 22px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 17px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      color: #607281;
+      font-size: 12px;
+      font-weight: 550;
+    }
+
+    .status-completed {
+      display: inline-block;
+      padding: 1px 9px;
+      background: #edf3ee;
+      border: 1px solid #d6e5d9;
+      color: #436b4c;
+      border-radius: 2px;
+    }
+
+    .flagship-body p {
+      margin: 0 0 17px;
+      color: #455665;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .resource-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .resource-links a {
+      padding: 0 13px;
+      border-right: 1px solid #cdd5dc;
+    }
+
+    .resource-links a:first-child {
+      padding-left: 0;
+    }
+
+    .resource-links a:last-child {
+      border-right: 0;
+    }
+
+    /* Publications */
+
+    .publication-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .publication-item {
+      padding: 18px 18px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+    }
+
+    .publication-item h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.5;
+    }
+
+    .publication-item p {
+      margin: 0 0 12px;
+      color: #667785;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .publication-item a {
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    /* Announcements */
+
+    .updates-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .update-item {
+      display: grid;
+      grid-template-columns: 142px minmax(0, 1fr);
+      gap: 17px;
+      padding: 16px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .update-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .update-date {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .update-content {
+      color: #465866;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-panel {
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .sidebar-heading {
+      margin: 0;
+      padding: 13px 17px;
+      background: var(--navy);
+      color: white;
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    .sidebar-content {
+      padding: 17px;
+    }
+
+    .facts-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .facts-list li {
+      padding: 11px 0;
+      color: #4e606e;
+      font-size: 13px;
+      line-height: 1.65;
+      border-bottom: 1px solid #e8edf1;
+    }
+
+    .facts-list li:first-child {
+      padding-top: 0;
+    }
+
+    .facts-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .office-name {
+      margin: 0 0 11px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .office-address {
+      margin: 0;
+      color: #586b79;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .office-email {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .related-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .related-list li {
+      border-bottom: 1px solid #e8edf1;
+    }
+
+    .related-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .related-list a {
+      display: block;
+      padding: 10px 0;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 550;
+    }
+
+    .related-list a::before {
+      content: "›";
+      margin-right: 9px;
+      color: var(--red);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      background: var(--navy-dark);
+      color: #e0e7ed;
+      border-top: 4px solid var(--red);
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 35px;
+      padding-top: 31px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand h2 {
+      margin: 0 0 7px;
+      color: white;
+      font-size: 17px;
+      font-weight: 650;
+    }
+
+    .footer-brand p,
+    .footer-contact p {
+      margin: 0;
+      color: #c3d0da;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .footer-contact {
+      text-align: right;
+    }
+
+    .footer-contact a {
+      color: white;
+      font-size: 13px;
+    }
+
+    /* Page not found */
+
+    .error-page {
+      min-height: 410px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 55px 20px 65px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+    }
+
+    .error-content {
+      width: 100%;
+      max-width: 690px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .error-code {
+      display: block;
+      margin-bottom: 9px;
+      color: #cbd5dd;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 3px;
+    }
+
+    .error-content h2 {
+      margin: 0 0 23px;
+      color: var(--navy);
+      font-size: 36px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: -.8px;
+    }
+
+    .error-divider {
+      width: 54px;
+      height: 3px;
+      margin: 0 auto 25px;
+      background: var(--red);
+    }
+
+    .error-content p {
+      margin: 0 auto;
+      max-width: 620px;
+      color: #526473;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .error-content p a {
+      color: var(--blue);
+      font-weight: 650;
+      border-bottom: 1px solid #9aafbf;
+      transition: color .2s, border-color .2s;
+    }
+
+    .error-content p a:hover {
+      color: var(--red);
+      border-bottom-color: var(--red);
+      text-decoration: none;
+    }
+
+    .page-content {
+      width: 100%;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 1000px) {
+      .content-layout {
+        grid-template-columns: minmax(0, 1fr) 255px;
+        gap: 24px;
+      }
+
+      .programme-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 32px, var(--max-width));
+      }
+
+      .top-strip-inner {
+        min-height: 42px;
+      }
+
+      .institution-name {
+        font-size: 11px;
+      }
+
+      .top-links {
+        gap: 7px;
+        font-size: 11px;
+      }
+
+      .brand-area {
+        min-height: 125px;
+        gap: 16px;
+      }
+
+      .brand-symbol {
+        width: 55px;
+        height: 55px;
+        flex-basis: 55px;
+        font-size: 30px;
+      }
+
+      .brand-copy h1 {
+        font-size: 21px;
+      }
+
+      .brand-abbreviation {
+        font-size: 13px;
+      }
+
+      .brand-description {
+        font-size: 12px;
+      }
+
+      .navigation-inner {
+        min-height: auto;
+      }
+
+      .navigation a {
+        min-height: 47px;
+        padding: 0 13px;
+        font-size: 13px;
+      }
+
+      .navigation a:first-child {
+        padding-left: 0;
+        padding-right: 18px;
+      }
+
+      main {
+        padding-top: 28px;
+        padding-bottom: 42px;
+      }
+
+      .content-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+      }
+
+      .programme-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .publication-list {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-main {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-contact {
+        text-align: left;
+      }
+
+      .error-page {
+        min-height: 350px;
+        padding: 45px 20px;
+      }
+
+      .error-content h2 {
+        font-size: 30px;
+      }
+
+      .error-content p {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      .top-strip-inner {
+        justify-content: center;
+      }
+
+      .institution-name {
+        font-size: 10px;
+        text-align: center;
+      }
+
+      .top-links {
+        display: none;
+      }
+
+      .brand-area {
+        min-height: 112px;
+        gap: 13px;
+        padding-top: 16px;
+        padding-bottom: 17px;
+      }
+
+      .brand-symbol {
+        width: 47px;
+        height: 47px;
+        flex-basis: 47px;
+        font-size: 26px;
+      }
+
+      .brand-copy h1 {
+        font-size: 18px;
+      }
+
+      .brand-abbreviation {
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      .brand-description {
+        font-size: 11px;
+      }
+
+      .navigation a {
+        min-height: 43px;
+        padding: 0 10px;
+        font-size: 12px;
+      }
+
+      .programme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .update-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .error-page {
+        min-height: 320px;
+        padding: 38px 17px;
+      }
+
+      .error-content h2 {
+        font-size: 27px;
+      }
+
+      .error-content p {
+        font-size: 14px;
+        line-height: 1.85;
+      }
+
+      .footer-main {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="ribbon"><div class="inner"><span>National Transport Research Programme (NTRP) · Narodowy Program Badań Transportowych (NPBT)</span></div></div>
-<div class="wrap" style="padding-top:60px; padding-bottom:60px;">
-  <h2 class="pagetitle">Page not found</h2>
-  <p>The page you requested does not exist on this site. Please use the navigation above to find what you are looking for, or start at the <a href="/">programme home page</a>.</p>
-</div>
-<footer class="sitefoot"><div class="inner"><div class="col"><p><strong>National Transport Research Programme (NTRP)</strong></p><p>Narodowy Program Badań Transportowych (NPBT) · 2021–2030</p></div></div></footer>
+
+  <!-- Institutional top strip -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <div class="institution-name">
+        National Transport Research Programme (NTRP) · Narodowy Program Badań Transportowych (NPBT)
+      </div>
+    </div>
+  </div>
+
+  <!-- Main header -->
+  <header class="main-header">
+    <div class="container brand-area">
+      <div class="brand-symbol" aria-hidden="true">N</div>
+      <div class="brand-copy">
+        <h1>National Transport Research Programme (NTRP)</h1>
+        <p class="brand-abbreviation">
+          Narodowy Program Badań Transportowych (NPBT)
+        </p>
+        <p class="brand-description">
+          2021–2030
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Primary navigation -->
+  <nav class="navigation" aria-label="Main navigation">
+    <div class="container navigation-inner">
+      <a href="/" class="active" aria-current="page">Programme home page</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <div class="container page-content">
+      <div class="error-page">
+        <div class="error-content">
+          <span class="error-code" aria-hidden="true">404</span>
+          <h2>Page not found</h2>
+          <div class="error-divider" aria-hidden="true"></div>
+          <p>
+            The page you requested does not exist on this site. Please use the navigation above to find what you are looking for, or start at the
+            <a href="/">programme home page</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <h2>National Transport Research Programme (NTRP)</h2>
+        <p>
+          Narodowy Program Badań Transportowych (NPBT) · 2021–2030
+        </p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
